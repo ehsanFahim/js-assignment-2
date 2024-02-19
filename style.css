@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --bg-primary: #1DD100;
+    --white: #fff;
+    --text-1: #030712;
+    --text-2: #030712b3;
+    --card-1: #FFBF0F;
+    --card-2: #F78C9C;
+}
+
+.w-h {
+    width: 1171px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 56px;
+    align-items: center;
+
+}
+
+.logo h1 {
+    color: var(--text-1);
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.btn {
+    display: flex;
+    gap: 10px;
+    border: 1px solid var(--bg-primary);
+    padding: 16px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgba(29, 209, 0, 0.10);
+}
+
+.banner {
+    background: url(./images/banner.png) no-repeat;
+    background-position: center;
+    object-fit: cover;
+    height: 550px;
+    margin: 37px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.banner h1 {
+    color: var(--white);
+    text-align: center;
+    font-size: 64px;
+    font-weight: 800;
+    padding-top: 70px;
+}
+
+.banner p {
+    color: var(--white);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 700px;
+    padding-bottom: 20px;
+}
+
+.banner h1 span {
+    color: var(--bg-primary);
+}
+
+.btn-start {
+    padding: 20px 30px;
+    color: var(--text-1);
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    background: var(--bg-primary);
+    cursor: pointer;
+}
+
+.banner-card {
+    position: absolute;
+    bottom: -70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+}
+
+.banner-cards {
+    background: var(--white);
+    flex: 1;
+    border-bottom: 1px solid var(--bg-primary);
+    width: 308px;
+    height: 138px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    gap: 16px;
+}
+
+.banner-cards h1 {
+    font-size: 36px;
+    color: var(--text-1);
+    line-height: 10px;
+}
+
+.banner-cards img {
+    width: 64px;
+    height: 64px;
+}
+
+.banner-cards p {
+    font-size: 18px;
+    color: var(--text-2);
+    line-height: 60px;
+}
+
+.banner-text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.cupon-cards {
+    background: var(--card-1);
+}
+
+section {}
+
+section h1 {
+    color: var(--text-1);
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 120px;
+    margin-bottom: 48px;
+}
+
+.cupon-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.cupon-cards {
+    display: flex;
+}
+
+.cupon-cards p {
+    color: var(--text-1);
+
+    font-weight: 900;
+    line-height: 36px;
+    /* 90% */
+}
+
+.cupon-cards h3 {
+    font-size: 40px;
+}
+
+.cupon-cards p {}
+
+.cupon-cards span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.cupon-cards img {}
+
+.text-right {
+    font-size: 20px;
+}
+
+.text-right h3 {}
+
+.text-right p {}
