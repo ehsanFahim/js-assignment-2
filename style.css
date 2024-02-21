@@ -466,12 +466,13 @@ aside:last-child {
   font-weight: 700;
   position: relative;
 }
-.box-title p:first-child:after {
+.box-title p span {
   content: "2";
   background: var(--bg-primary);
   position: absolute;
-  border-radius: 10px;
-  padding: 3px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
   color: white;
   margin-left: 5px;
   text-align: center;
@@ -543,18 +544,17 @@ aside:last-child {
   font-weight: 600;
   margin-bottom: 16px;
   margin-top: 16px;
-
 }
 .same-input input {
-  padding: 20px 0px; 
-   width: 100%;
+  padding: 20px 0px;
+  width: 100%;
   border-radius: 8px;
   border: 1px solid #03071233;
   font-size: 16px;
 }
 .info-btn {
   width: 100%;
-  margin-top:16px ;
+  margin-top: 16px;
   padding: 20px 0px;
   font-size: 16px;
   letter-spacing: 3px;
@@ -566,4 +566,54 @@ aside:last-child {
 .term {
 }
 .term a {
+}
+
+
+.congrats {
+  padding: 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  justify-content: center;
+  align-items: center;
+  width: 718px;
+  height: 481px;
+  background: var(--white);
+  position: fixed;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.congrats img {
+}
+.congrats h2 {
+  color: #27ae60;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+.con-but {
+  padding: 20px 70px;
+  background: #27ae60;
+  border: 0;
+  cursor: pointer;
+  border-radius: 50px;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+.texts {
+}
+.texts h4 {
+  color: #4a4a4a;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+
+}
+.texts p {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
