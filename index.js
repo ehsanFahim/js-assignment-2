@@ -48,7 +48,7 @@ for (let i = 0; i < sameSeatContainers.length; i++) {
   for (let j = 0; j < buttons.length; j++) {
     const button = buttons[j];
 
-    button.addEventListener("click", function () {
+    button.addEventListener("click", function handleClick() {
       if (selectedButtonCount < 4) {
         let items = document.querySelector(".box-row");
         items.innerHTML += `<div class="items"><p>${this.value}</p><p>Economy</p><p>550</p></div>`;
@@ -73,6 +73,9 @@ for (let i = 0; i < sameSeatContainers.length; i++) {
         }
 
         totalPriceElement.innerHTML = totalSum;
+
+        
+        button.removeEventListener("click", handleClick);
       } else {
         console.log("You can only select up to 4 buttons.");
       }

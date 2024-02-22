@@ -372,7 +372,7 @@ section {
 .right-section {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 550px;
 }
 .selected {
   display: flex;
