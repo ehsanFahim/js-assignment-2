@@ -8,8 +8,7 @@ const couponInput = document.querySelector(".cupon");
 const infobtn = document.querySelector(".info-btn");
 const congratsElement = document.querySelector(".congrats");
 const clearBtn = document.querySelector(".con-but");
-
-console.log(infobtn, congratsElement);
+const valueCheck = document.querySelector(".value-check");
 
 let selectedButtonCount = 0;
 let totalSum = 0;
@@ -73,8 +72,24 @@ for (let i = 0; i < sameSeatContainers.length; i++) {
         }
 
         totalPriceElement.innerHTML = totalSum;
+        infobtn.addEventListener("click", function () {
+          if (
+            parseInt(grandPrice.textContent) !== 0 &&
+            grandPrice.textContent.trim() !== ""
+          ) {
+            congratsElement.style.visibility = "visible";
+          }
+        });
 
-        
+        clearBtn.addEventListener("click", function () {
+          if (
+            parseInt(grandPrice.textContent) !== 0 &&
+            grandPrice.textContent.trim() !== ""
+          ) {
+            congratsElement.style.visibility = "collapse";
+          }
+        });
+
         button.removeEventListener("click", handleClick);
       } else {
         console.log("You can only select up to 4 buttons.");
@@ -86,17 +101,5 @@ for (let i = 0; i < sameSeatContainers.length; i++) {
 noNumInput.addEventListener("keypress", function (event) {
   if (event.key.match(/[^\d]/)) {
     event.preventDefault();
-  }
-});
-
-infobtn.addEventListener("click", function () {
-  if (parseInt(grandPrice.textContent) !== 0) {
-    congratsElement.style.visibility = "visible";
-  }
-});
-
-clearBtn.addEventListener("click", function () {
-  if (parseInt(grandPrice.textContent) !== 0) {
-    congratsElement.style.visibility = "collapse";
   }
 });
