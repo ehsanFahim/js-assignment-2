@@ -26,7 +26,9 @@ a {
   --card-1: #ffbf0f;
   --card-2: #f78c9c;
 }
-
+.hidden{
+  visibility: visible;
+}
 .w-h {
   width: 1171px;
   margin: 0 auto;
@@ -584,7 +586,6 @@ aside:last-child {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;
 }
 .congrats img {
 }
@@ -617,3 +618,73 @@ aside:last-child {
   font-size: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+
+/* Styles for the footer */
+footer {
+  background-color: var(--text-1);
+  padding: 20px;
+  padding: 135px;
+}
+
+/* Styles for the top section of the footer */
+.foot-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid;
+}
+
+.top-lft {
+  flex: 1;
+}
+
+.top-lft h2 {
+  font-size: 24px;
+  color: var(--white);
+  margin-bottom: 50px;
+
+}
+.top-lft span{
+  font-size: 18px;
+}
+.top-lft p {
+  font-size: 16px;
+  color: #666;
+}
+
+.top-right {
+  flex: 1;
+  text-align: right;
+}
+
+.top-right img {
+  width: 120px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Styles for the bottom section of the footer */
+.foot-bottom {
+  margin-top: 20px;
+  text-align: center;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+}
+
+.foot-bottom span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* .items-foot {
+  display: flex;
+  justify-content: center;
+}
+
+.items p {
+  margin: 0 10px;
+  font-size: 14px;
+  color: #999;
+  text-decoration: none;
+} */

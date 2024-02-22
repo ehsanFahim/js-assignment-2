@@ -5,43 +5,40 @@ const totalPriceElement = document.querySelector(".totalprice");
 const applyButton = document.querySelector(".apply");
 const grandPrice = document.querySelector(".grandtotal");
 const couponInput = document.querySelector(".cupon");
+const infobtn = document.querySelector(".info-btn");
+const congratsElement = document.querySelector(".congrats");
+const clearBtn = document.querySelector(".con-but");
 
-let selectedButtonCount = 0; // Initialize a variable to count the selected buttons
-let totalSum = 0; // Initialize a variable to store the total sum of seat values
-let discount = 0; // Initialize discount percentage
+console.log(infobtn, congratsElement);
 
-// Decrement the value inside the "dyna" class "p" tag by 40
-let value = 40;
-dynamic.textContent = value;
+let selectedButtonCount = 0;
+let totalSum = 0;
+let discount = 0;
 
-// Function to apply discount and update total price
 function applyDiscount() {
-  const couponValue = couponInput.value.trim().toUpperCase(); // Get the value of the coupon input and convert to uppercase
-  
-  // Check the value of the coupon input
+  const couponValue = couponInput.value.trim().toLowerCase().replace(/\s/g, "");
+
   switch (couponValue) {
-    case "NEW15":
+    case "new15":
       discount = 15;
       break;
-    case "COUPLE20":
+    case "couple20":
       discount = 20;
       break;
     default:
-      discount = 0; // No discount if coupon code is invalid or not provided
+      discount = 0;
       break;
   }
 
-  // Calculate discounted total price
   const discountedTotalPrice = totalSum * (1 - discount / 100);
-  
-  // Update the inner HTML of the element with class "grandtotal" with the discounted total price
+
   grandPrice.textContent = discountedTotalPrice;
-  
-  // Log the coupon value
-  console.log(`Coupon applied! Discount: ${discount}%. New total price after discount: ${discountedTotalPrice}`);
+
+  console.log(
+    `Coupon applied! Discount: ${discount}%. New total price after discount: ${discountedTotalPrice}`
+  );
 }
 
-// Event listener for the apply button click
 applyButton.addEventListener("click", applyDiscount);
 
 for (let i = 0; i < sameSeatContainers.length; i++) {
@@ -51,47 +48,52 @@ for (let i = 0; i < sameSeatContainers.length; i++) {
   for (let j = 0; j < buttons.length; j++) {
     const button = buttons[j];
 
-    // Add event listener to each button
     button.addEventListener("click", function () {
-      // Check if the count of selected buttons is less than four
       if (selectedButtonCount < 4) {
         let items = document.querySelector(".box-row");
-        // Log the value of the clicked button
         items.innerHTML += `<div class="items"><p>${this.value}</p><p>Economy</p><p>550</p></div>`;
 
-        // Change the background color of the clicked button to green
         this.style.backgroundColor = "#1dd100";
 
-        // Add the value of the clicked button to the total sum
         totalSum += 550;
 
-        // Decrement the value inside the "dyna" class "p" tag by 40 only if it's greater than 0
+        let value = parseInt(dynamic.textContent);
         if (value > 0) {
-          value -= 40;
+          value -= 1;
           dynamic.textContent = value;
         }
 
-        // Increment the selected button count
+        this.value = parseInt(this.value) - 1;
+
         selectedButtonCount++;
 
-        // Update the inner HTML of the element with class "val" with the selected button count
         const valElement = document.querySelector(".val");
         if (valElement) {
           valElement.innerHTML = selectedButtonCount.toString();
         }
 
-        // Log the total sum of seat values
         totalPriceElement.innerHTML = totalSum;
       } else {
-        // If the count of selected buttons is already four, prevent further selections
         console.log("You can only select up to 4 buttons.");
       }
     });
   }
 }
 
-noNumInput.addEventListener("keypress", function(event) {
-    if (event.key.match(/[^\d]/)) {
-      event.preventDefault();
-    }
-  });
+noNumInput.addEventListener("keypress", function (event) {
+  if (event.key.match(/[^\d]/)) {
+    event.preventDefault();
+  }
+});
+
+infobtn.addEventListener("click", function () {
+  if (parseInt(grandPrice.textContent) !== 0) {
+    congratsElement.style.visibility = "visible";
+  }
+});
+
+clearBtn.addEventListener("click", function () {
+  if (parseInt(grandPrice.textContent) !== 0) {
+    congratsElement.style.visibility = "collapse";
+  }
+});
